@@ -1,0 +1,556 @@
+:root {
+    --background-color: #e9ecef;
+    --black: #222;
+    --white: #ffffff;
+    --white-hover: #eee;
+    --gray: #6a778e;
+    --advaice_theme_0: #134a35;
+    --advaice_theme_1: #319b43;
+    --advaice_theme_2: #7eda3b;
+    --advaice_theme_3: #f77004;
+    --advaice_theme_4: #fbc12c;
+    --search-border-color: #ccc;
+    --search-suggestion-text-color: rgba(187, 183, 183, 0.7);
+}
+
+body {
+    margin: 0;
+    font-family: "Articulat CF";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: var(--background-color);
+    padding: 1rem;
+    height: 100vh;
+}
+
+.dashboard, .dashboard .row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    height: 100%;
+    margin: 0;
+    background-color: var(--white);
+    border-radius: 20px;
+}
+
+.dashboard .col-2, .dashboard .col-10 {
+    height: 100%;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 4px 6px var(--info-shadow);
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    justify-content: space-between;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.logo {
+    width: -webkit-fill-available;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.nav-title {
+    padding: 1rem;
+    color: var(--gray);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.author-logos {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.company-logo {
+    width: 50%;
+}
+
+.map-container {
+    height: 100%;
+    border-radius: 20px;
+    position: relative;
+    padding: 1.5rem;
+}
+
+#map {
+    height: 100%;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.leaflet-container {
+    z-index: 1;
+}
+
+.leaflet-control-zoom.leaflet-bar.leaflet-control {
+    margin: 2rem 2rem 1rem 2rem;
+}
+
+.leaflet-control-attribution.leaflet-control {
+    margin: 1rem 2rem 2rem 2rem;
+}
+
+.leaflet-touch .leaflet-bar a {
+    width: 2.5rem;
+    height: 2.5rem;
+    align-content: center;
+    border: none;
+    opacity: 0.85;
+    color: var(--advaice_theme_3);
+}
+
+.leaflet-touch .leaflet-bar a:hover {
+    color: var(--advaice_theme_0);
+}
+
+.leaflet-touch .leaflet-bar {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-touch .leaflet-bar a:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.leaflet-touch .leaflet-bar a:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+a {
+    color: var(--advaice_theme_1);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--advaice_theme_1);
+    text-decoration: none;
+}
+
+.leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container-fluid {
+    position: absolute;
+    top: 0;
+    right: 0; 
+    height: 100%;
+    margin: 0;
+    padding: 0; 
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.col-4 {
+    padding: 3rem 0.75rem 3rem 3rem;
+    height: 100%;
+    opacity: 1;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: var(--white);
+    opacity: 0.9;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    gap: 0.5rem;
+}
+
+.company-general-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+#info-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 0.8rem;
+    color: var(--gray);
+    font-weight: bold;
+}
+
+.company-name {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--advaice_theme_3);
+    padding: 1rem;
+    gap: 1rem;
+    align-items: center;
+    justify-content: start;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    transition: font-size 0.2s ease;
+    overflow: hidden;
+}
+
+.company-info, .company-sustainability{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    transition: font-size 0.2s ease;
+    font-weight: bold;
+    overflow: hidden;
+    color: var(--advaice_theme_0);
+}
+
+.tab-content > .tab-pane {
+    padding-top: 10px;
+}
+
+.nav-tabs-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: var(--advaice_theme_3);
+    font-weight: bold;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--advaice_theme_0);
+}
+
+.nav-link {
+    color: var(--gray);
+    padding: .3rem 1rem;
+}
+
+.nav-tabs .nav-link {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 1em;
+}
+
+.activity-code {
+    align-self: center;
+    color: var(--advaice_theme_2);
+}
+
+.activity-descr {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.eco-entity-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#material-urls, #ecodesign-urls, #lifespan-urls{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+span#ecodesign-descr,
+span#lifespan-descr,
+span#material-descr {
+    font-size: 0.85rem;
+    max-height: 100px; /* Adjust the height as needed */
+    overflow-y: auto;
+    display: block;
+    width: 100%; /* Ensure the span takes up the full width of the container */
+    padding: 5px; /* Optional padding for better readability */
+    box-sizing: border-box;
+}
+
+span#ecodesign-descr,
+span#lifespan-descr,
+span#material-descr {
+    font-size: 0.85rem;
+    max-height: 100px; /* Adjust the height as needed */
+    overflow-y: auto;
+    display: block;
+    width: 100%; /* Ensure the span takes up the full width of the container */
+    padding: 5px; /* Optional padding for better readability */
+    box-sizing: border-box;
+}
+
+/* Scrollbar styling for WebKit browsers (Chrome, Safari) */
+span#ecodesign-descr::-webkit-scrollbar,
+span#lifespan-descr::-webkit-scrollbar,
+span#material-descr::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+    height: 8px; /* Height of the scrollbar (for horizontal scrolling) */
+}
+
+span#ecodesign-descr::-webkit-scrollbar-track,
+span#lifespan-descr::-webkit-scrollbar-track,
+span#material-descr::-webkit-scrollbar-track {
+    background: var(--white); /* Track color */
+    border-radius: 4px;
+}
+
+span#ecodesign-descr::-webkit-scrollbar-thumb,
+span#lifespan-descr::-webkit-scrollbar-thumb,
+span#material-descr::-webkit-scrollbar-thumb {
+    background: var(--advaice_theme_1); /* Scrollbar thumb color */
+    border-radius: 4px;
+}
+
+span#ecodesign-descr::-webkit-scrollbar-thumb:hover,
+span#lifespan-descr::-webkit-scrollbar-thumb:hover,
+span#material-descr::-webkit-scrollbar-thumb:hover {
+    background: var(--advaice_theme_0); /* Scrollbar thumb color on hover */
+}
+
+/* Scrollbar styling for Firefox */
+span#ecodesign-descr,
+span#lifespan-descr,
+span#material-descr {
+    scrollbar-width: thin;
+    scrollbar-color: var(--advaice_theme_1) var(--white);
+}
+
+.col-8 {
+    padding: 3rem 3rem 3rem 0.75rem;
+    height: 100%;
+    opacity: 1;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: var(--white);
+    opacity: 0.9;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    gap: 1rem;
+    height: fit-content;
+    color: var(--advaice_theme_0);
+    font-weight: bold;
+}
+
+.filter-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.filter-title {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--advaice_theme_3);
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: start;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    transition: font-size 0.2s ease;
+    overflow: hidden;
+}
+
+#apply-filters {
+    background-color: var(--advaice_theme_1);
+    border: none;
+    border-radius: 10px;
+    padding: 0.5em 1.5em 0.5em 1.5em;
+    font-size: 0.9em;
+    color: white;
+}
+
+.filter-element {
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 0.3rem;
+}
+
+#turnover-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.search-icon {
+    padding: 0.5rem;
+    font-size: 1.3em;
+    color: var(--advaice_theme_1);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    position: relative; /* Ensure suggestions are positioned relative to the search bar */
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 1em;
+    position: relative; /* Ensure suggestions are positioned relative to the container */
+}
+
+#search-item, #search-activity, #search-city {
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 0.85em;
+    border: 1px solid var(--search-border-color);
+    border-radius: 1em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    color: var(--advaice_theme_0);
+}
+
+.search-suggestion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.85em;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    color: var(--search-suggestion-text-color);
+    pointer-events: none;
+    background: none;
+}
+
+.suggestions-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 1000;
+    background-color: var(--white);
+    border-radius: 1em;
+    width: 100%; /* Match the width of the search-item */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-height: 150px;
+    overflow-y: auto;
+    top: calc(100% + 0.5rem); /* Position the list below the search bar */
+    left: 0;
+}
+
+.suggestions-list li {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #999;
+    font-size: 0.85em;
+}
+
+.suggestions-list li:hover {
+    background-color: var(--white-hover);
+}
+
+
+.noUi-horizontal {
+    height: 0.75rem;
+}
+
+.noUi-connect {
+    background: var(--advaice_theme_3);
+}
+
+.noUi-handle:after {
+    display: none;
+}
+
+.noUi-handle:before {
+    display: none;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 1rem;
+    height: 1rem;
+    right: -10px;
+    top: -3px;
+}
+
+.noUi-horizontal .noUi-tooltip {
+    bottom: -300%;
+    font-size: 0.85em;
+    border-radius: 1em;
+    color: var(--advaice_theme_0);
+}
+
+#apply-filters:hover {
+    background-color: var(--advaice_theme_0);
+}
+
+.eco-filter-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.filter-checkbox input[type="checkbox"] {
+    accent-color: var(--advaice_theme_1) /* Change to your desired color */
+}
+
+
+.marker-hover {
+    filter: drop-shadow(0 0 20px rgba(242, 113, 15, 1)); 
+}
+
+.marker-selected {
+    filter: drop-shadow(0 0 20px rgba(242, 113, 15, 1)); 
+}
+
+
